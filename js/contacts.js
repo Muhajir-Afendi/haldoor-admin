@@ -58,7 +58,7 @@ function fetch(pageNo = 1) {
                                     <i class="fas fa-eye text-dark"></i> 
                                 </a>  
                                 <a onclick="remove('`+ response.data[i].id +`')">
-                                    <i class="fas fa-eye text-dark"></i> 
+                                    <i class="fas fa-trash-alt text-dark"></i>
                                 </a>   
                             </td>`;
 
@@ -196,7 +196,7 @@ $('#search-input').keyup(function(e) {
                                             <i class="fas fa-eye text-dark"></i> 
                                         </a> 
                                         <a onclick="remove('`+ response.data[i].id +`')">
-                                            <i class="fas fa-trash-alt"></i>
+                                            <i class="fas fa-trash-alt text-dark"></i>
                                         </a>   
                                     </td>`;
         
@@ -258,7 +258,7 @@ function remove(id) {
   
                // Redirect after 3 milli second
                setTimeout(() => {
-                  window.location.replace("/contacts")
+                  window.location.replace("/contacts.php")
                }, 500);
                 
             }
