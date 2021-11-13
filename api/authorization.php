@@ -2,7 +2,7 @@
 
     function check_admin() {
         if (!isset($_SESSION['name'], $_SESSION['email']) || $_SESSION['device'] !== $_SERVER['HTTP_USER_AGENT']) {
-            exit(header('location: /haldoor-admin/signin.php'));
+            exit(header('location: /signin.php'));
         }
     }
 
