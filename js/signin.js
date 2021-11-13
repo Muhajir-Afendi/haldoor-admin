@@ -9,7 +9,7 @@ $('#singin-form').on('submit', function(e) {
     var password = document.getElementById('pwd').value
 
     $.ajax({
-        url:"/haldoor-admin/api/signin.php",
+        url:"/api/signin.php",
         method:"POST",
         data: { email: email, password: password },
         beforeSend: function(){
@@ -27,7 +27,7 @@ $('#singin-form').on('submit', function(e) {
             else {
                 
                 // Redirect to home 
-                window.location.replace("/haldoor-admin")
+                window.location.replace("")
                 
             }
             

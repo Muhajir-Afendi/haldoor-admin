@@ -10,7 +10,7 @@ fetch()
 function fetch(pageNo = 1) {
 
     $.ajax({
-        url:"/haldoor-admin/api/contacts.php",
+        url:"/api/contacts.php",
         method:"POST",
         data: {action: "fetch", page_no: pageNo },
         beforeSend: function() {
@@ -150,7 +150,7 @@ $('#search-input').keyup(function(e) {
         else {
 
             $.ajax({
-                url:"/haldoor-admin/api/contacts.php",
+                url:"/api/contacts.php",
                 method:"POST",
                 data: { action: "search", searching_text: searchingText },
                 beforeSend: function() {
