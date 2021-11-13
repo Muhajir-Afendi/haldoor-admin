@@ -11,7 +11,7 @@
     require_once "./config.php";
 
     // Check if user is legitimate
-    // if (check_admin_api()) {
+    if (check_admin_api()) {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -56,11 +56,11 @@
             $response['message'] = 'Invalid request Please try again';
         }
 
-    // }
-    // else {
-    //     $response['error'] = true;
-    //     $response['message'] = 'Invalid request Please try again';
-    // }
+    }
+    else {
+        $response['error'] = true;
+        $response['message'] = 'Invalid request Please try again';
+    }
 
 
     $json_response = json_encode($response);

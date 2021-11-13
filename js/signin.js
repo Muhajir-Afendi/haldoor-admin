@@ -27,7 +27,7 @@ $('#singin-form').on('submit', function(e) {
             else {
                 
                 // Redirect to home 
-                window.location.replace("")
+                window.location.replace("/")
                 
             }
             
