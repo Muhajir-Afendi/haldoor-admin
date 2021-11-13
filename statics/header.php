@@ -13,9 +13,9 @@
                 <a href="index.html">
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
-                        <img src="/haldoor-admin/assets/img/logo.png" alt="Haldoor" class="dark-logo" style="width: 30%" />
+                        <img src="/assets/img/logo.png" alt="Haldoor" class="dark-logo" style="width: 30%" />
                         <!-- Light Logo icon -->
-                        <img src="/haldoor-admin/assets/img/logo.png" alt="Haldoor" class="light-logo" style="width: 30%" />
+                        <img src="/assets/img/logo.png" alt="Haldoor" class="light-logo" style="width: 30%" />
                     </b>
                     <!--End Logo icon -->
 

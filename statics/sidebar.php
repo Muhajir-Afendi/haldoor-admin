@@ -7,7 +7,7 @@
 
                 <!-- Dashboards -->
                 <li class="sidebar-item" id="dashboard-nav"> 
-                    <a class="sidebar-link" href="/haldoor-admin" aria-expanded="false">
+                    <a class="sidebar-link" href="" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
@@ -24,14 +24,14 @@
                         
                         <!-- New User -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/users/new.php" class="sidebar-link" id="new-user-nav">
+                            <a href="/users/new.php" class="sidebar-link" id="new-user-nav">
                                 <span class="hide-menu"> New User </span>
                             </a>
                         </li>
 
                         <!-- Manage Users -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/users/listing.php" class="sidebar-link" id="list-user-nav">
+                            <a href="/users/listing.php" class="sidebar-link" id="list-user-nav">
                                 <span class="hide-menu"> Manage Users </span>
                             </a>
                         </li>
@@ -52,14 +52,14 @@
                         
                         <!-- New Graduation -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/graduations/new.php" class="sidebar-link" id="new-graduation-nav">
+                            <a href="/graduations/new.php" class="sidebar-link" id="new-graduation-nav">
                                 <span class="hide-menu"> New Graduation </span>
                             </a>
                         </li>
 
                         <!-- Manage Graduations -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/graduations/listing.php" class="sidebar-link" id="new-graduation-nav">
+                            <a href="/graduations/listing.php" class="sidebar-link" id="new-graduation-nav">
                                 <span class="hide-menu"> Manage Graduations </span>
                             </a>
                         </li>
@@ -80,14 +80,14 @@
                         
                         <!-- New Achievements -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/achievements/new.php" class="sidebar-link">
+                            <a href="/achievements/new.php" class="sidebar-link">
                                 <span class="hide-menu"> New Achievement </span>
                             </a>
                         </li>
 
                         <!-- Manage Achievements -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/achievements/listing.php" class="sidebar-link">
+                            <a href="/achievements/listing.php" class="sidebar-link">
                                 <span class="hide-menu"> Manage Achievements </span>
                             </a>
                         </li>
@@ -108,14 +108,14 @@
                         
                         <!-- New Keynote -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/keynotes/new.php" class="sidebar-link">
+                            <a href="/keynotes/new.php" class="sidebar-link">
                                 <span class="hide-menu"> New Keynote </span>
                             </a>
                         </li>
 
                         <!-- Manage Keynote -->
                         <li class="sidebar-item">
-                            <a href="/haldoor-admin/keynotes/listing.php" class="sidebar-link">
+                            <a href="/keynotes/listing.php" class="sidebar-link">
                                 <span class="hide-menu"> Manage Keynotes </span>
                             </a>
                         </li>
@@ -126,7 +126,7 @@
                 
                 <!-- Contact Us -->
                 <li class="sidebar-item"> 
-                    <a class="sidebar-link" href="/haldoor-admin/contacts.php" aria-expanded="false">
+                    <a class="sidebar-link" href="/contacts.php" aria-expanded="false">
                         <i data-feather="message-square" class="feather-icon"></i>
                         <span class="hide-menu">Contact Us</span>
                     </a>
@@ -134,7 +134,7 @@
                 
                 <li class="list-divider"></li>                                    
                 <li class="sidebar-item"> 
-                    <a class="sidebar-link sidebar-link" href="/haldoor-admin/api/signout.php" aria-expanded="false">
+                    <a class="sidebar-link sidebar-link" href="/api/signout.php" aria-expanded="false">
                         <i data-feather="log-out" class="feather-icon"></i>
                         <span class="hide-menu">Logout</span>
                     </a>
