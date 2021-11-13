@@ -17,7 +17,7 @@ fetch()
 function fetch(pageNo = 1) {
 
     $.ajax({
-        url:"/haldoor-admin/api/users.php",
+        url:"/api/users.php",
         method:"POST",
         data: {action: "fetch", page_no: pageNo },
         beforeSend: function() {
@@ -162,7 +162,7 @@ function edit(data) {
 function remove(id) {
 
     $.ajax({
-        url:"/haldoor-admin/api/users.php",
+        url:"/api/users.php",
         method:"POST",
         data: {action: "remove" , id: id },
         beforeSend: function(){
@@ -185,7 +185,7 @@ function remove(id) {
   
                // Redirect after 3 milli second
                setTimeout(() => {
-                  window.location.replace("/haldoor-admin/users/listing.php")
+                  window.location.replace("/users/listing.php")
                }, 500);
                 
             }
@@ -217,7 +217,7 @@ $('#search-input').keyup(function(e) {
         else {
 
             $.ajax({
-                url:"/haldoor-admin/api/users.php",
+                url:"/api/users.php",
                 method:"POST",
                 data: { action: "search", searching_text: searchingText },
                 beforeSend: function() {

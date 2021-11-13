@@ -8,7 +8,7 @@ fetch()
 function fetch(pageNo = 1) {
 
     $.ajax({
-        url:"/haldoor-admin/api/keynotes.php",
+        url:"/api/keynotes.php",
         method:"POST",
         data: {action: "fetch", page_no: pageNo },
         beforeSend: function() {
@@ -47,7 +47,7 @@ function fetch(pageNo = 1) {
                     row += '<td>'+ no +'</td>'
 
                     row += `<td>
-                                <img onerror="this.onerror=null;this.src='/haldoor-admin/assets/img/placeholder.png';" src="/haldoor-admin/uploads/keynotes/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
+                                <img onerror="this.onerror=null;this.src='/assets/img/placeholder.png';" src="/uploads/keynotes/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
                             </td>`
 
                     row += '<td>'+ response.data[i].title +'</td>'
@@ -152,7 +152,7 @@ $('#search-input').keyup(function(e) {
         else {
 
             $.ajax({
-                url:"/haldoor-admin/api/keynotes.php",
+                url:"/api/keynotes.php",
                 method:"POST",
                 data: { action: "search", searching_text: searchingText },
                 beforeSend: function() {
@@ -188,7 +188,7 @@ $('#search-input').keyup(function(e) {
                             row += '<td>'+ no +'</td>'
 
                             row += `<td>
-                                        <img onerror="this.onerror=null;this.src='/haldoor-admin/assets/img/placeholder.png';" src="/haldoor-admin/uploads/keynotes/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
+                                        <img onerror="this.onerror=null;this.src='/assets/img/placeholder.png';" src="/uploads/keynotes/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
                                     </td>`
         
                             row += '<td>'+ response.data[i].title +'</td>'
@@ -234,7 +234,7 @@ function edit(id) {
 function remove(id, filename) {
 
     $.ajax({
-        url:"/haldoor-admin/api/keynotes.php",
+        url:"/api/keynotes.php",
         method:"POST",
         data: {action: "remove" , id: id, deleting_filename: filename },
         beforeSend: function(){
@@ -257,7 +257,7 @@ function remove(id, filename) {
   
                // Redirect after 3 milli second
                setTimeout(() => {
-                  window.location.replace("/haldoor-admin/keynotes/listing.php")
+                  window.location.replace("/keynotes/listing.php")
                }, 500);
                 
             }

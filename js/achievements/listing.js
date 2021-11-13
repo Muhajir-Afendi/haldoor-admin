@@ -9,7 +9,7 @@ fetch()
 function fetch(pageNo = 1) {
 
     $.ajax({
-        url:"/haldoor-admin/api/achievements.php",
+        url:"/api/achievements.php",
         method:"POST",
         data: {action: "fetch", page_no: pageNo },
         beforeSend: function() {
@@ -48,7 +48,7 @@ function fetch(pageNo = 1) {
                     row += '<td>'+ no +'</td>'
 
                     row += `<td>
-                                <img onerror="this.onerror=null;this.src='/haldoor-admin/assets/img/placeholder.png';" src="/haldoor-admin/uploads/achievements/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
+                                <img onerror="this.onerror=null;this.src='/assets/img/placeholder.png';" src="/uploads/achievements/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
                             </td>`
 
                     row += '<td>'+ response.data[i].title +'</td>'
@@ -153,7 +153,7 @@ $('#search-input').keyup(function(e) {
         else {
 
             $.ajax({
-                url:"/haldoor-admin/api/achievements.php",
+                url:"/api/achievements.php",
                 method:"POST",
                 data: { action: "search", searching_text: searchingText },
                 beforeSend: function() {
@@ -189,7 +189,7 @@ $('#search-input').keyup(function(e) {
                             row += '<td>'+ no +'</td>'
 
                             row += `<td>
-                                        <img onerror="this.onerror=null;this.src='/haldoor-admin/assets/img/placeholder.png';" src="/haldoor-admin/uploads/achievements/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
+                                        <img onerror="this.onerror=null;this.src='/assets/img/placeholder.png';" src="/uploads/achievements/`+ response.data[i].image +`" alt="" style="max-width: 120px;">
                                     </td>`
         
                             row += '<td>'+ response.data[i].title +'</td>'
@@ -235,7 +235,7 @@ function edit(id) {
 function remove(id, filename) {
 
     $.ajax({
-        url:"/haldoor-admin/api/achievements.php",
+        url:"/api/achievements.php",
         method:"POST",
         data: {action: "remove" , id: id, deleting_filename: filename },
         beforeSend: function(){
@@ -258,7 +258,7 @@ function remove(id, filename) {
   
                // Redirect after 3 milli second
                setTimeout(() => {
-                  window.location.replace("/haldoor-admin/achievements/listing.php")
+                  window.location.replace("/achievements/listing.php")
                }, 500);
                 
             }

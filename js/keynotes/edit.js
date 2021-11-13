@@ -47,7 +47,7 @@ function edit_submit() {
     var data = new FormData(form);
 
     $.ajax({
-        url:"/haldoor-admin/api/keynotes.php",
+        url:"/api/keynotes.php",
         method:"POST",
         data: data,
         enctype: 'multipart/form-data',
@@ -73,7 +73,7 @@ function edit_submit() {
 
                 // Redirect after 3 milli second
                 setTimeout(() => {
-                    window.location.replace("/haldoor-admin/keynotes/listing.php")
+                    window.location.replace("/keynotes/listing.php")
                 }, 300);
                     
             }

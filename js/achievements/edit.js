@@ -47,7 +47,7 @@ function edit_submit() {
     var data = new FormData(form);
 
     $.ajax({
-        url:"/haldoor-admin/api/achievements.php",
+        url:"/api/achievements.php",
         method:"POST",
         data: data,
         enctype: 'multipart/form-data',
@@ -73,7 +73,7 @@ function edit_submit() {
 
                 // Redirect after 3 milli second
                 setTimeout(() => {
-                    window.location.replace("/haldoor-admin/achievements/listing.php")
+                    window.location.replace("/achievements/listing.php")
                 }, 300);
                     
             }

@@ -60,7 +60,7 @@ $('#users-form').on('submit', function(e) {
   else {
 
     $.ajax({
-      url:"/haldoor-admin/api/users.php",
+      url:"/api/users.php",
       method:"POST",
       data: {action: "edit" , editing_id: id, name: name, email: email, password: password,  confirm_password: confirm_password },
       beforeSend: function(){
@@ -83,7 +83,7 @@ $('#users-form').on('submit', function(e) {
 
              // Redirect after 3 milli second
              setTimeout(() => {
-                window.location.replace("/haldoor-admin/users/listing.php")
+                window.location.replace("/users/listing.php")
              }, 300);
               
           }

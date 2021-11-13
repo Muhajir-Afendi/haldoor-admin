@@ -58,7 +58,7 @@
                     $stmt->store_result();
                             
                     if ($stmt->num_rows === 0) {
-                        echo "<script type='text/javascript'> window.location.replace('/haldoor-admin/keynotes/listing.php'); </script>";
+                        echo "<script type='text/javascript'> window.location.replace('/keynotes/listing.php'); </script>";
                         exit();
                     }
                     else

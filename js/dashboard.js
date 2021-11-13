@@ -7,7 +7,7 @@ $('#dashboard-nav').addClass('selected')
 
 // Fetch Informations
 $.ajax({
-    url:"/haldoor-admin/api/dashboard.php",
+    url:"/api/dashboard.php",
     method:"POST",
     beforeSend: function() {
         $("#overlay").fadeIn(300);

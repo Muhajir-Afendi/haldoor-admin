@@ -55,7 +55,7 @@ function edit_submit() {
     var data = new FormData(form);
 
     $.ajax({
-        url:"/haldoor-admin/api/graduations.php",
+        url:"/api/graduations.php",
         method:"POST",
         data: data,
         enctype: 'multipart/form-data',
@@ -81,7 +81,7 @@ function edit_submit() {
 
                 // Redirect after 3 milli second
                 setTimeout(() => {
-                    window.location.replace("/haldoor-admin/graduations/listing.php")
+                    window.location.replace("/graduations/listing.php")
                 }, 300);
                     
             }

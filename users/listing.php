@@ -89,7 +89,7 @@
                 </div>
                 <!-- Card -->
 
-                <form action="/haldoor-admin/users/edit.php" method="GET">
+                <form action="/users/edit.php" method="GET">
                     <input type="hidden" id="user-id" name="user-id">
                     <input type="hidden" id="user-name" name="user-name">
                     <input type="hidden" id="user-email" name="user-email">
