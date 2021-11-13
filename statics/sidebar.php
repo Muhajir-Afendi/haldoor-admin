@@ -5,7 +5,7 @@
 
             <ul id="sidebarnav">
 
-                <!-- Dashboard -->
+                <!-- Dashboards -->
                 <li class="sidebar-item" id="dashboard-nav"> 
                     <a class="sidebar-link" href="/haldoor-admin" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
