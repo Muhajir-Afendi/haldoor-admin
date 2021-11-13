@@ -5,7 +5,7 @@
   require_once "api/authorization.php";
 
   // Check if user is allowed this region
-  check_admin();
+//   check_admin();
 
 ?>
 
