@@ -7,7 +7,7 @@
 
                 <!-- Dashboards -->
                 <li class="sidebar-item" id="dashboard-nav"> 
-                    <a class="sidebar-link" href="" aria-expanded="false">
+                    <a class="sidebar-link" href="/" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
