@@ -4,5 +4,5 @@
 
     session_destroy();
 
-    exit(header('location: /haldoor-admin/signin.php'));
+    exit(header('location: /signin.php'));
 ?>
