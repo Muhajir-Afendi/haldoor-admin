@@ -2,7 +2,7 @@
 
     define('DB_SERVER', 'box5912.bluehost.com');
     define('DB_USERNAME', 'haldoorv_admin');
-    define('DB_PASSWORD', ')jfR5Rq?JO~Q');
+    define('DB_PASSWORD', 'c#bCI#IcvRw*');
     define('DB_NAME', 'haldoorv_db');
     
     /* Attempt to connect to MySQL database */
