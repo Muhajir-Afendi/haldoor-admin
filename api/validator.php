@@ -718,6 +718,35 @@
             return $this->search_validator($inputs);
         }
 
+        function delete_contacts_validations($inputs) {
+
+            $validatedInputs = array();
+            $isError = false;
+            $msg = "";
+                
+            // Check if variable are POSTED
+            $deleting_id = isset($inputs['id']) ? $inputs['id'] : false ;
+
+            // Deleting Id
+            $deleting_id = validations\validate_number_id($deleting_id);
+            if (!$deleting_id) {
+                $isError = true;
+                $msg = "Please use valid contacts info";
+            }
+            else {
+                $validatedInputs["deleting_id"] = $deleting_id;
+            }
+                        
+
+            if ($isError) {
+                return $msg;
+            }
+            else {
+                return $validatedInputs; 
+            }
+            
+        }    
+
     }
     
     // Signin

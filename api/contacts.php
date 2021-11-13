@@ -159,6 +159,41 @@
 
             }
             
+            // Delete
+            else if(isset($_POST['action']) && $_POST['action'] === "remove") {
+
+                // Validations
+                $validation = $validator->delete_contacts_validations($_POST);
+
+                // If Validation Is success
+                if (gettype($validation) === "array") {                
+
+                    $deleting_id = $validation['deleting_id'];
+
+                    $DELETE = "DELETE FROM `contacts` WHERE `id` = ?";
+                    $stmt = $conn -> prepare($DELETE);
+                    $stmt->bind_param("s", $deleting_id);
+
+                    if($stmt->execute()) {
+                        $response['error'] = false;
+                        $response['message'] = 'Removed Successfully';    
+                    }
+
+                    else {
+
+                        $response['error'] = true;
+                        $response['message'] = 'Please check your enteries and try again !!';
+                    }    
+                            
+                }
+                else {
+                    $response['error'] = true;
+                    $response['message'] = $validation;
+                }
+
+            }
+            
+
             else {
                 $response['error'] = true;
                 $response['message'] = 'Invalid request Please try again';

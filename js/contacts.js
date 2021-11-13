@@ -56,6 +56,9 @@ function fetch(pageNo = 1) {
                     row += `<td class="text-end">
                                 <a onclick="detail('`+ i +`')">
                                     <i class="fas fa-eye text-dark"></i> 
+                                </a>  
+                                <a onclick="remove('`+ response.data[i].id +`')">
+                                    <i class="fas fa-eye text-dark"></i> 
                                 </a>   
                             </td>`;
 
@@ -191,6 +194,9 @@ $('#search-input').keyup(function(e) {
                             row += `<td class="text-end">
                                         <a onclick="detail('`+ i +`')">
                                             <i class="fas fa-eye text-dark"></i> 
+                                        </a> 
+                                        <a onclick="remove('`+ response.data[i].id +`')">
+                                            <i class="fas fa-trash-alt"></i>
                                         </a>   
                                     </td>`;
         
@@ -223,4 +229,46 @@ $('#search-input').keyup(function(e) {
 function detail(index) {
     $('#show-feedback-detail').click()
     $('#feedback-contents').text(contacts_data[index].message)
+}
+
+// Remove
+function remove(id) {
+
+    $.ajax({
+        url:"/api/contacts.php",
+        method:"POST",
+        data: {action: "remove" , id: id },
+        beforeSend: function(){
+            $("#overlay").fadeIn(300);
+        },
+        success:function(data)
+        {
+  
+            var response = JSON.parse(JSON.stringify(data))
+                
+            if (response.error === true) {
+                
+                // Alert
+                notify_error(response.message)
+            }
+            else {
+                
+                // Alert
+                notify_success(response.message)
+  
+               // Redirect after 3 milli second
+               setTimeout(() => {
+                  window.location.replace("/contacts")
+               }, 500);
+                
+            }
+           
+            
+        },
+        complete:function(){
+            $("#overlay").fadeOut(300);
+        }
+  
+    });
+
 }

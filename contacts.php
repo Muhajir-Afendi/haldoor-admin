@@ -128,7 +128,8 @@
 
     <!--Custom JavaScript -->
     <script src="js/contacts.js"></script>
-
+    <script src="js/errors.js"></script>
+    
 </body>
 
 </html>
