@@ -9,7 +9,7 @@
 
     //  Validations
     require_once 'validator.php';
-    $validator = new graduations_validator;
+    $validator = new achievements_validator;
 
     $singlePageRows = 10;
 
@@ -160,7 +160,7 @@
         else if(isset($_POST['action']) && $_POST['action'] === "new") {
                         
             // Validations
-            $validation = $validator->new_graduation_validations($_POST);            
+            $validation = $validator->new_achievement_validations($_POST);            
             
             // If Validation Is success
             if (gettype($validation) === "array") {
@@ -172,9 +172,14 @@
                 $ext = $validation["file_extension"];
                 $filename = rand(100,100000) .".". $ext;
     
-                $INSERT = "INSERT INTO `achievements`(`title`, `body`, `image`) VALUES (?,?,?)";
+                $facebook = $validation["facebook"];
+                $youtube = $validation["youtube"];
+                $instagram = $validation["instagram"];
+                $twitter = $validation["twitter"];
+
+                $INSERT = "INSERT INTO `achievements`(`title`, `body`,`facebook`, `youtube`, `instagram`, `twitter`, `image`) VALUES (?,?,?,?,?,?,?)";
                 $stmt = $conn -> prepare($INSERT);
-                $stmt->bind_param("sss", $title, $body, $filename);
+                $stmt->bind_param("sssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $filename);
 
                 if($stmt->execute()) {
                     $response['error'] = false;
@@ -203,7 +208,7 @@
         else if(isset($_POST['action']) && $_POST['action'] === "edit") {
 
             // Validations
-            $validation = $validator->edit_graduation_validations($_POST);
+            $validation = $validator->edit_achievement_validations($_POST);
             
             // If Validation Is success
             if (gettype($validation) === "array") {
@@ -213,6 +218,11 @@
                 $title = $validation["title"];
                 $body = $validation["body"];
         
+                $facebook = $validation["facebook"];
+                $youtube = $validation["youtube"];
+                $instagram = $validation["instagram"];
+                $twitter = $validation["twitter"];
+
                 $new_file_name = $validation["new_file_name"];
 
                 if ($new_file_name !== "") {
@@ -221,14 +231,14 @@
                     $ext = $validation["file_extension"];
                     $filename = rand(100,100000) .".". $ext;
 
-                    $UPDATE = "UPDATE `achievements` SET `title`=?,`body`=?,`image`=? WHERE `id`=?";
+                    $UPDATE = "UPDATE `achievements` SET `title`=?,`body`=?, `facebook`=?, `youtube`=?, `instagram`=?, `twitter`=?, `image`=? WHERE `id`=?";
                     $stmt = $conn -> prepare($UPDATE);
-                    $stmt->bind_param("ssss", $title, $body, $filename, $editing_id);    
+                    $stmt->bind_param("ssssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $filename, $editing_id);    
                 }
                 else {
-                    $UPDATE = "UPDATE `achievements` SET `title`=?,`body`=? WHERE `id`=?";
+                    $UPDATE = "UPDATE `achievements` SET `title`=?, `body`=?, `facebook`=?, `youtube`=?, `instagram`=?, `twitter`=? WHERE `id`=?";
                     $stmt = $conn -> prepare($UPDATE);
-                    $stmt->bind_param("sss", $title, $body, $editing_id);    
+                    $stmt->bind_param("sssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $editing_id);    
                 }
 
             
@@ -274,7 +284,7 @@
         else if(isset($_POST['action']) && $_POST['action'] === "remove") {
 
             // Validations
-            $validation = $validator->delete_graduation_validations($_POST);
+            $validation = $validator->delete_achievement_validations($_POST);
 
             // If Validation Is success
             if (gettype($validation) === "array") {                

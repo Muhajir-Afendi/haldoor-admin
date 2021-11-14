@@ -510,6 +510,286 @@
 
     }
 
+    // Achievements
+    class achievements_validator extends essential_validations {
+
+        function page_validations($inputs) {
+
+            return $this->page_validator($inputs);
+        }
+
+        function search_validations($inputs) {
+
+            return $this->search_validator($inputs);
+        }
+
+        function new_achievement_validations($inputs) {
+
+            $validatedInputs = array();
+            $isError = false;
+            $msg = "";
+    
+            // Check if variable are POSTED
+            $title = isset($inputs['title']) ? $inputs['title'] : false ;
+            $body = isset($inputs['body']) ? $inputs['body'] : false ;
+
+            $facebook = isset($inputs['facebook']) ? $inputs['facebook'] : false ;
+            $youtube = isset($inputs['youtube']) ? $inputs['youtube'] : false ;
+            $instagram = isset($inputs['instagram']) ? $inputs['instagram'] : false ;
+            $twitter = isset($inputs['twitter']) ? $inputs['twitter'] : false ;
+
+            $image = isset($inputs['image']) ? $inputs['image'] : false ;
+
+            // Title
+            $validatedTitle = validations\validate_title($title);
+            if (!$validatedTitle) {
+                $isError = true;
+                $msg = "Please use valid title";
+            }
+            else {
+                $validatedInputs["title"] = $validatedTitle;
+            }
+
+            // Body
+            $validatedBody = validations\validate_body($body);
+            if (!$validatedBody) {
+                $isError = true;
+                $msg = "Please use valid body";
+            }
+            else {
+                $validatedInputs["body"] = $validatedBody;
+            }
+
+            // Facebook
+            $validatedFacebook = validations\validate_social_media($facebook);
+            $validatedInputs["facebook"] = $validatedFacebook;
+        
+            // Youtube
+            $validatedYoutube = validations\validate_social_media($youtube);
+            $validatedInputs["youtube"] = $validatedYoutube;
+                        
+            // Instagram
+            $validatedInstagram = validations\validate_social_media($instagram);
+            $validatedInputs["instagram"] = $validatedInstagram;
+
+            // Twitter
+            $validatedTwitter = validations\validate_social_media($twitter);
+            $validatedInputs["twitter"] = $validatedTwitter;            
+            
+            // Image Validation
+            $imgFile = $_FILES['image']['name'];
+            $tmp_dir = $_FILES['image']['tmp_name'];
+            $imgSize = $_FILES['image']['size'];
+
+            $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+            $valid_extensions = array('jpeg','jpg','png','gif'); // valid extensions
+
+            // Check if image uploaded
+            if(empty($imgFile)) {
+                $isError = true;
+                $msg = "Please upload image file";
+            }
+            else {
+
+                // Check if extension is allowed
+                if(!in_array($imgExt, $valid_extensions)) {
+                    $isError = true;
+                    $msg = $imgFile ." is not an Image file, only JPG, PNG and GIF are allowed";
+                }
+                else {
+
+                    if($imgSize > 5000000) {
+                        $isError = true;
+                        $msg = $imgSize ." is large file, please use file with size less than 5MB";    
+                    }   
+                    else {
+                        $validatedInputs["file_data"] = $tmp_dir;
+                        $validatedInputs["file_extension"] = $imgExt;
+                    }
+
+
+                }
+
+            }
+
+
+
+            if ($isError) {
+                return $msg;
+            }
+            else {
+                return $validatedInputs; 
+            }
+            
+    
+        }
+        
+        function edit_achievement_validations($inputs) {
+
+            $validatedInputs = array();
+            $isError = false;
+            $msg = "";
+                
+            // Check if variable are POSTED
+            $editing_id = isset($inputs['editing_id']) ? $inputs['editing_id'] : false ;
+            $editing_image = isset($inputs['editing_image']) ? $inputs['editing_image'] : false ;
+
+            $title = isset($inputs['title']) ? $inputs['title'] : false ;
+            $body = isset($inputs['body']) ? $inputs['body'] : false ;
+
+            $facebook = isset($inputs['facebook']) ? $inputs['facebook'] : false ;
+            $youtube = isset($inputs['youtube']) ? $inputs['youtube'] : false ;
+            $instagram = isset($inputs['instagram']) ? $inputs['instagram'] : false ;
+            $twitter = isset($inputs['twitter']) ? $inputs['twitter'] : false ;
+
+            $image = isset($inputs['image']) ? $inputs['image'] : false ;
+
+            // Editing Id
+            $editing_id = validations\validate_number_id($editing_id);
+            if (!$editing_id) {
+                $isError = true;
+                $msg = "Please use valid graduation info";
+            }
+            else {
+                $validatedInputs["editing_id"] = $editing_id;
+            }
+
+            // Editing File
+            $editing_image = validations\validate_file_name($editing_image);
+            if (!$editing_image) {
+                $isError = true;
+                $msg = "Please use valid graduation info";
+            }
+            else {
+                $validatedInputs["editing_image"] = $editing_image;
+            }
+                    
+            // Title
+            $validatedTitle = validations\validate_title($title);
+            if (!$validatedTitle) {
+                $isError = true;
+                $msg = "Please use valid title";
+            }
+            else {
+                $validatedInputs["title"] = $validatedTitle;
+            }
+
+            // Body
+            $validatedBody = validations\validate_body($body);
+            if (!$validatedBody) {
+                $isError = true;
+                $msg = "Please use valid body";
+            }
+            else {
+                $validatedInputs["body"] = $validatedBody;
+            }
+
+            // Facebook
+            $validatedFacebook = validations\validate_social_media($facebook);
+            $validatedInputs["facebook"] = $validatedFacebook;
+        
+            // Youtube
+            $validatedYoutube = validations\validate_social_media($youtube);
+            $validatedInputs["youtube"] = $validatedYoutube;
+                        
+            // Instagram
+            $validatedInstagram = validations\validate_social_media($instagram);
+            $validatedInputs["instagram"] = $validatedInstagram;
+
+            // Twitter
+            $validatedTwitter = validations\validate_social_media($twitter);
+            $validatedInputs["twitter"] = $validatedTwitter;            
+            
+            // Image Validation
+            $imgFile = $_FILES['image']['name'];
+            $tmp_dir = $_FILES['image']['tmp_name'];
+            $imgSize = $_FILES['image']['size'];
+
+            $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+            $valid_extensions = array('jpeg','jpg','png','gif'); // valid extensions
+
+            // Check if image uploaded
+            if(empty($imgFile)) {           
+                $validatedInputs["new_file_name"] = "";
+            }
+
+            else {
+
+                // Check if extension is allowed
+                if(!in_array($imgExt, $valid_extensions)) {
+                    $isError = true;
+                    $msg = $imgFile ." is not allowed, only PDF files are allowed";
+                }
+                else {
+
+                    if($imgSize > 5000000) {
+                        $isError = true;
+                        $msg = $imgSize ." is large file, please use file with size less than 5MB";    
+                    }   
+                    else {
+                        $validatedInputs["new_file_name"] = $imgFile;
+                        $validatedInputs["file_data"] = $tmp_dir;
+                        $validatedInputs["file_extension"] = $imgExt;
+                    }
+
+
+                }
+
+            }
+            
+            
+            if ($isError) {
+                return $msg;
+            }
+            else {
+                return $validatedInputs; 
+            }
+            
+        }    
+
+        function delete_achievement_validations($inputs) {
+
+            $validatedInputs = array();
+            $isError = false;
+            $msg = "";
+                
+            // Check if variable are POSTED
+            $deleting_id = isset($inputs['id']) ? $inputs['id'] : false ;
+            $deleting_filename = isset($inputs['deleting_filename']) ? $inputs['deleting_filename'] : false ;
+
+            // Deleting Id
+            $deleting_id = validations\validate_number_id($deleting_id);
+            if (!$deleting_id) {
+                $isError = true;
+                $msg = "Please use valid graduation info";
+            }
+            else {
+                $validatedInputs["deleting_id"] = $deleting_id;
+            }
+            
+            // Deleting File
+            $deleting_file = validations\validate_file_name($deleting_filename);
+            if (!$deleting_file) {
+                $isError = true;
+                $msg = "Please use valid graduation";
+            }
+            else {
+                $validatedInputs["deleting_filename"] = $deleting_file;
+            }
+            
+
+            if ($isError) {
+                return $msg;
+            }
+            else {
+                return $validatedInputs; 
+            }
+            
+        }    
+
+    }
+    
+
     // Keynotes
     class keynotes_validator extends essential_validations {
 
