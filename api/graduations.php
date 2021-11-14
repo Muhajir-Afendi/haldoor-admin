@@ -181,7 +181,7 @@
                     $ext = $validation["file_extension"];
                     $filename = rand(100,100000) .".". $ext;
         
-                    $INSERT = "INSERT INTO `graduations`(`title`, `body`, `facebook`, `youtube`, `instagram`, `twitter`, `image`) VALUES (?,?,?)";
+                    $INSERT = "INSERT INTO `graduations`(`title`, `body`, `facebook`, `youtube`, `instagram`, `twitter`, `image`) VALUES (?,?,?,?,?,?,?)";
                     $stmt = $conn -> prepare($INSERT);
                     $stmt->bind_param("sssssss", $title, $body,$facebook, $youtube, $instagram, $twitter, $filename);
 
