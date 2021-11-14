@@ -172,13 +172,18 @@
                     $title = $validation["title"];
                     $body = $validation["body"];
         
+                    $facebook = $validation["facebook"];
+                    $youtube = $validation["youtube"];
+                    $instagram = $validation["instagram"];
+                    $twitter = $validation["twitter"];
+
                     $uploading_file_data = $validation["file_data"];
                     $ext = $validation["file_extension"];
                     $filename = rand(100,100000) .".". $ext;
         
-                    $INSERT = "INSERT INTO `graduations`(`title`, `body`, `image`) VALUES (?,?,?)";
+                    $INSERT = "INSERT INTO `graduations`(`title`, `body`, `facebook`, `youtube`, `instagram`, `twitter`, `image`) VALUES (?,?,?)";
                     $stmt = $conn -> prepare($INSERT);
-                    $stmt->bind_param("sss", $title, $body, $filename);
+                    $stmt->bind_param("sssssss", $title, $body,$facebook, $youtube, $instagram, $twitter, $filename);
 
                     if($stmt->execute()) {
                         $response['error'] = false;
@@ -217,6 +222,11 @@
                     $title = $validation["title"];
                     $body = $validation["body"];
             
+                    $facebook = $validation["facebook"];
+                    $youtube = $validation["youtube"];
+                    $instagram = $validation["instagram"];
+                    $twitter = $validation["twitter"];
+
                     $new_file_name = $validation["new_file_name"];
 
                     if ($new_file_name !== "") {
@@ -225,14 +235,14 @@
                         $ext = $validation["file_extension"];
                         $filename = rand(100,100000) .".". $ext;
 
-                        $UPDATE = "UPDATE `graduations` SET `title`=?,`body`=?,`image`=? WHERE `id`=?";
+                        $UPDATE = "UPDATE `graduations` SET `title`=?,`body`=?, `facebook`=?, `youtube`=?, `instagram`=?, `twitter`=?,`image`=? WHERE `id`=?";
                         $stmt = $conn -> prepare($UPDATE);
-                        $stmt->bind_param("ssss", $title, $body, $filename, $editing_id);    
+                        $stmt->bind_param("ssssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $filename, $editing_id);    
                     }
                     else {
                         $UPDATE = "UPDATE `graduations` SET `title`=?,`body`=? WHERE `id`=?";
                         $stmt = $conn -> prepare($UPDATE);
-                        $stmt->bind_param("sss", $title, $body, $editing_id);    
+                        $stmt->bind_param("sssssss", $title, $body, $editing_id);    
                     }
 
                 

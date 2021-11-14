@@ -48,7 +48,7 @@
 
                     require_once "../api/config.php";
 
-                    $fetch_modal = "SELECT `id`, `title`, `body`, `image` FROM `graduations` WHERE `id` = ?";
+                    $fetch_modal = "SELECT `id`, `title`, `body`, `facebook`, `youtube`, `instagram`, `twitter`,  `image` FROM `graduations` WHERE `id` = ?";
 
                     $stmt = $conn -> prepare($fetch_modal);
                     $stmt->bind_param("s", $_GET["id"]);
@@ -64,7 +64,7 @@
                     else
                     {
 
-                        $stmt->bind_result($id, $title, $body, $image);
+                        $stmt->bind_result($id, $title, $body, $facebook, $youtube, $instagram, $twitter, $image);
                         $stmt->fetch();
 
                     }
@@ -97,6 +97,38 @@
                                     <div class="form-group">
                                         <label for="image">Image</label>
                                         <input type="file" class="form-control" name="image" id="image" accept="image/*">
+                                    </div>
+                                </div>
+
+                                <!-- Facebook -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="facebook">Facebook</label>
+                                        <input type="text" class="form-control" name="facebook" id="facebook" value="<?php echo $facebook; ?>">
+                                    </div>
+                                </div>
+
+                                <!-- Youtube -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="youtube">Youtube</label>
+                                        <input type="text" class="form-control" name="youtube" id="youtube" value="<?php echo $youtube; ?>">
+                                    </div>
+                                </div>
+
+                                <!-- Instagram -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="instagram">Instagram</label>
+                                        <input type="text" class="form-control" name="instagram" id="instagram" value="<?php echo $instagram; ?>">
+                                    </div>
+                                </div>
+
+                                <!-- Twitter -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="twitter">Twitter</label>
+                                        <input type="text" class="form-control" name="twitter" id="twitter" value="<?php echo $twitter; ?>">
                                     </div>
                                 </div>
 

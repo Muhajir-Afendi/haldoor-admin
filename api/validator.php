@@ -254,6 +254,11 @@
             $title = isset($inputs['title']) ? $inputs['title'] : false ;
             $body = isset($inputs['body']) ? $inputs['body'] : false ;
 
+            $facebook = isset($inputs['facebook']) ? $inputs['facebook'] : false ;
+            $youtube = isset($inputs['youtube']) ? $inputs['youtube'] : false ;
+            $instagram = isset($inputs['instagram']) ? $inputs['instagram'] : false ;
+            $twitter = isset($inputs['twitter']) ? $inputs['twitter'] : false ;
+
             $image = isset($inputs['image']) ? $inputs['image'] : false ;
 
             // Title
@@ -276,6 +281,22 @@
                 $validatedInputs["body"] = $validatedBody;
             }
 
+            // Facebook
+            $validatedFacebook = validations\validate_social_media($facebook);
+            $validatedInputs["facebook"] = $validatedFacebook;
+        
+            // Youtube
+            $validatedYoutube = validations\validate_social_media($youtube);
+            $validatedInputs["youtube"] = $validatedYoutube;
+                        
+            // Instagram
+            $validatedInstagram = validations\validate_social_media($instagram);
+            $validatedInputs["instagram"] = $validatedInstagram;
+
+            // Twitter
+            $validatedTwitter = validations\validate_social_media($twitter);
+            $validatedInputs["twitter"] = $validatedTwitter;            
+            
             // Image Validation
             $imgFile = $_FILES['image']['name'];
             $tmp_dir = $_FILES['image']['tmp_name'];
@@ -337,6 +358,11 @@
             $title = isset($inputs['title']) ? $inputs['title'] : false ;
             $body = isset($inputs['body']) ? $inputs['body'] : false ;
 
+            $facebook = isset($inputs['facebook']) ? $inputs['facebook'] : false ;
+            $youtube = isset($inputs['youtube']) ? $inputs['youtube'] : false ;
+            $instagram = isset($inputs['instagram']) ? $inputs['instagram'] : false ;
+            $twitter = isset($inputs['twitter']) ? $inputs['twitter'] : false ;
+
             $image = isset($inputs['image']) ? $inputs['image'] : false ;
 
             // Editing Id
@@ -379,6 +405,22 @@
                 $validatedInputs["body"] = $validatedBody;
             }
 
+            // Facebook
+            $validatedFacebook = validations\validate_social_media($facebook);
+            $validatedInputs["facebook"] = $validatedFacebook;
+        
+            // Youtube
+            $validatedYoutube = validations\validate_social_media($youtube);
+            $validatedInputs["youtube"] = $validatedYoutube;
+                        
+            // Instagram
+            $validatedInstagram = validations\validate_social_media($instagram);
+            $validatedInputs["instagram"] = $validatedInstagram;
+
+            // Twitter
+            $validatedTwitter = validations\validate_social_media($twitter);
+            $validatedInputs["twitter"] = $validatedTwitter;            
+            
             // Image Validation
             $imgFile = $_FILES['image']['name'];
             $tmp_dir = $_FILES['image']['tmp_name'];

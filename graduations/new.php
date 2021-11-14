@@ -69,6 +69,38 @@
                                     </div>
                                 </div>
 
+                                <!-- Facebook -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="facebook">Facebook</label>
+                                        <input type="text" class="form-control" name="facebook" id="facebook">
+                                    </div>
+                                </div>
+
+                                <!-- Youtube -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="youtube">Youtube</label>
+                                        <input type="text" class="form-control" name="youtube" id="youtube">
+                                    </div>
+                                </div>
+
+                                <!-- Instagram -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="instagram">Instagram</label>
+                                        <input type="text" class="form-control" name="instagram" id="instagram">
+                                    </div>
+                                </div>
+
+                                <!-- Twitter -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="twitter">Twitter</label>
+                                        <input type="text" class="form-control" name="twitter" id="twitter">
+                                    </div>
+                                </div>
+
                                 <!-- Body -->
                                 <div class="col-md-12">
                                     <div class="form-group">

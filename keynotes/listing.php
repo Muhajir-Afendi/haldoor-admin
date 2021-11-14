@@ -21,7 +21,7 @@
 
 <body>
 
-    <div class="preloader">
+    <div class="preloader" id="overlay">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
