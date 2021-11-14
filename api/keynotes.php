@@ -172,13 +172,18 @@
                     $title = $validation["title"];
                     $body = $validation["body"];
         
+                    $facebook = $validation["facebook"];
+                    $youtube = $validation["youtube"];
+                    $instagram = $validation["instagram"];
+                    $twitter = $validation["twitter"];
+
                     $uploading_file_data = $validation["file_data"];
                     $ext = $validation["file_extension"];
                     $filename = rand(100,100000) .".". $ext;
         
-                    $INSERT = "INSERT INTO `keynotes`(`title`, `body`, `image`) VALUES (?,?,?)";
+                    $INSERT = "INSERT INTO `keynotes`(`title`, `body`,  `facebook`, `youtube`, `instagram`, `twitter`, `image`) VALUES (?,?,?,?,?,?,?)";
                     $stmt = $conn -> prepare($INSERT);
-                    $stmt->bind_param("sss", $title, $body, $filename);
+                    $stmt->bind_param("sssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $filename);
 
                     if($stmt->execute()) {
                         $response['error'] = false;

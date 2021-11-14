@@ -63,7 +63,7 @@
                                 </div>
 
                                 <!-- Facebook -->
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="facebook">Facebook</label>
                                         <input type="text" class="form-control" name="facebook" id="facebook" required="required">
@@ -71,7 +71,7 @@
                                 </div>
 
                                 <!-- Youtube -->
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="youtube">Youtube</label>
                                         <input type="text" class="form-control" name="youtube" id="youtube" required="required">
@@ -79,7 +79,7 @@
                                 </div>
 
                                 <!-- Instagram -->
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="instagram">Instagram</label>
                                         <input type="text" class="form-control" name="instagram" id="instagram" required="required">
@@ -87,7 +87,7 @@
                                 </div>
 
                                 <!-- Twitter -->
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="twitter">Twitter</label>
                                         <input type="text" class="form-control" name="twitter" id="twitter" required="required">

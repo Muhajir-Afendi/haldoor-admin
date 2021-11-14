@@ -97,6 +97,19 @@
 
     }
 
+    // Socail Media
+    function validate_social_media($input) {
+        $input = trim($input);
+        $input = filter_var($input, FILTER_SANITIZE_STRING);
+
+        if (empty($input)) { 
+            return false; 
+        }
+        else {
+            return $input;
+        }
+
+    }
 
 
     /* ========== USERS ========== */

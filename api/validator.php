@@ -491,6 +491,11 @@
             $title = isset($inputs['title']) ? $inputs['title'] : false ;
             $body = isset($inputs['body']) ? $inputs['body'] : false ;
 
+            $facebook = isset($inputs['facebook']) ? $inputs['facebook'] : false ;
+            $youtube = isset($inputs['youtube']) ? $inputs['youtube'] : false ;
+            $instagram = isset($inputs['instagram']) ? $inputs['instagram'] : false ;
+            $twitter = isset($inputs['twitter']) ? $inputs['twitter'] : false ;
+
             $image = isset($inputs['image']) ? $inputs['image'] : false ;
 
             // Title
@@ -512,6 +517,47 @@
             else {
                 $validatedInputs["body"] = $validatedBody;
             }
+
+            // Facebook
+            $validatedFacebook = validations\validate_social_media($facebook);
+            if (!$validatedFacebook) {
+                $isError = true;
+                $msg = "Please use valid facebook link";
+            }
+            else {
+                $validatedInputs["facebook"] = $validatedFacebook;
+            }
+      
+            // Youtube
+            $validatedYoutube = validations\validate_social_media($youtube);
+            if (!$validatedYoutube) {
+                $isError = true;
+                $msg = "Please use valid Youtube link";
+            }
+            else {
+                $validatedInputs["youtube"] = $validatedYoutube;
+            }
+                        
+            // Instagram
+            $validatedInstagram = validations\validate_social_media($instagram);
+            if (!$validatedInstagram) {
+                $isError = true;
+                $msg = "Please use valid Instagram link";
+            }
+            else {
+                $validatedInputs["instagram"] = $validatedInstagram;
+            }
+
+            // Twitter
+            $validatedTwitter = validations\validate_social_media($twitter);
+            if (!$validatedTwitter) {
+                $isError = true;
+                $msg = "Please use valid Twitter link";
+            }
+            else {
+                $validatedInputs["twitter"] = $validatedTwitter;
+            }
+            
 
             // Image Validation
             $imgFile = $_FILES['image']['name'];
