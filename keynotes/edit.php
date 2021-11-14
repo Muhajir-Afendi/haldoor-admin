@@ -104,7 +104,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="facebook">Facebook</label>
-                                        <input type="text" class="form-control" name="facebook" id="facebook" value="<?php echo $facebook; ?>" required="required">
+                                        <input type="text" class="form-control" name="facebook" id="facebook" value="<?php echo $facebook; ?>">
                                     </div>
                                 </div>
 
@@ -112,7 +112,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="youtube">Youtube</label>
-                                        <input type="text" class="form-control" name="youtube" id="youtube" value="<?php echo $youtube; ?>" required="required">
+                                        <input type="text" class="form-control" name="youtube" id="youtube" value="<?php echo $youtube; ?>">
                                     </div>
                                 </div>
 
@@ -120,7 +120,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="instagram">Instagram</label>
-                                        <input type="text" class="form-control" name="instagram" id="instagram" value="<?php echo $instagram; ?>" required="required">
+                                        <input type="text" class="form-control" name="instagram" id="instagram" value="<?php echo $instagram; ?>">
                                     </div>
                                 </div>
 
@@ -128,7 +128,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="twitter">Twitter</label>
-                                        <input type="text" class="form-control" name="twitter" id="twitter" value="<?php echo $twitter; ?>" required="required">
+                                        <input type="text" class="form-control" name="twitter" id="twitter" value="<?php echo $twitter; ?>">
                                     </div>
                                 </div>
 
