@@ -669,43 +669,19 @@
 
             // Facebook
             $validatedFacebook = validations\validate_social_media($facebook);
-            if (!$validatedFacebook) {
-                $isError = true;
-                $msg = "Please use valid facebook link";
-            }
-            else {
-                $validatedInputs["facebook"] = $validatedFacebook;
-            }
+            $validatedInputs["facebook"] = $validatedFacebook;
         
             // Youtube
             $validatedYoutube = validations\validate_social_media($youtube);
-            if (!$validatedYoutube) {
-                $isError = true;
-                $msg = "Please use valid Youtube link";
-            }
-            else {
-                $validatedInputs["youtube"] = $validatedYoutube;
-            }
+            $validatedInputs["youtube"] = $validatedYoutube;
                         
             // Instagram
             $validatedInstagram = validations\validate_social_media($instagram);
-            if (!$validatedInstagram) {
-                $isError = true;
-                $msg = "Please use valid Instagram link";
-            }
-            else {
-                $validatedInputs["instagram"] = $validatedInstagram;
-            }
+            $validatedInputs["instagram"] = $validatedInstagram;
 
             // Twitter
             $validatedTwitter = validations\validate_social_media($twitter);
-            if (!$validatedTwitter) {
-                $isError = true;
-                $msg = "Please use valid Twitter link";
-            }
-            else {
-                $validatedInputs["twitter"] = $validatedTwitter;
-            }            
+            $validatedInputs["twitter"] = $validatedTwitter;
 
             // Image Validation
             $imgFile = $_FILES['image']['name'];
