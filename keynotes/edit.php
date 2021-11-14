@@ -48,7 +48,7 @@
 
                     require_once "../api/config.php";
 
-                    $fetch_modal = "SELECT `id`, `title`, `body`, `image` FROM `keynotes` WHERE `id` = ?";
+                    $fetch_modal = "SELECT `id`, `title`, `body`, `facebook`, `youtube`, `instagram`, `twitter`, `image` FROM `keynotes` WHERE `id` = ?";
 
                     $stmt = $conn -> prepare($fetch_modal);
                     $stmt->bind_param("s", $_GET["id"]);
@@ -64,7 +64,7 @@
                     else
                     {
 
-                        $stmt->bind_result($id, $title, $body, $image);
+                        $stmt->bind_result($id, $title, $body, $facebook, $youtube, $instagram, $twitter, $image);
                         $stmt->fetch();
 
                     }
@@ -99,6 +99,39 @@
                                         <input type="file" class="form-control" name="image" id="image" accept="image/*">
                                     </div>
                                 </div>
+
+                                <!-- Facebook -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="facebook">Facebook</label>
+                                        <input type="text" class="form-control" name="facebook" id="facebook" value="<?php echo $facebook; ?>" required="required">
+                                    </div>
+                                </div>
+
+                                <!-- Youtube -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="youtube">Youtube</label>
+                                        <input type="text" class="form-control" name="youtube" id="youtube" value="<?php echo $youtube; ?>" required="required">
+                                    </div>
+                                </div>
+
+                                <!-- Instagram -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="instagram">Instagram</label>
+                                        <input type="text" class="form-control" name="instagram" id="instagram" value="<?php echo $instagram; ?>" required="required">
+                                    </div>
+                                </div>
+
+                                <!-- Twitter -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="twitter">Twitter</label>
+                                        <input type="text" class="form-control" name="twitter" id="twitter" value="<?php echo $twitter; ?>" required="required">
+                                    </div>
+                                </div>
+
 
                                 <!-- Body -->
                                 <div class="col-md-12">

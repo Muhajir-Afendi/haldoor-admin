@@ -222,6 +222,11 @@
                     $title = $validation["title"];
                     $body = $validation["body"];
             
+                    $facebook = $validation["facebook"];
+                    $youtube = $validation["youtube"];
+                    $instagram = $validation["instagram"];
+                    $twitter = $validation["twitter"];
+
                     $new_file_name = $validation["new_file_name"];
 
                     if ($new_file_name !== "") {
@@ -230,14 +235,14 @@
                         $ext = $validation["file_extension"];
                         $filename = rand(100,100000) .".". $ext;
 
-                        $UPDATE = "UPDATE `keynotes` SET `title`=?,`body`=?,`image`=? WHERE `id`=?";
+                        $UPDATE = "UPDATE `keynotes` SET `title`=?,`body`=?,`facebook`=?, `youtube`=?, `instagram`=?, `twitter`=?,`image`=? WHERE `id`=?";
                         $stmt = $conn -> prepare($UPDATE);
-                        $stmt->bind_param("ssss", $title, $body, $filename, $editing_id);    
+                        $stmt->bind_param("ssssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $filename, $editing_id);    
                     }
                     else {
-                        $UPDATE = "UPDATE `keynotes` SET `title`=?,`body`=? WHERE `id`=?";
+                        $UPDATE = "UPDATE `keynotes` SET `title`=?,`body`=?,`facebook`=?, `youtube`=?, `instagram`=?, `twitter`=? WHERE `id`=?";
                         $stmt = $conn -> prepare($UPDATE);
-                        $stmt->bind_param("sss", $title, $body, $editing_id);    
+                        $stmt->bind_param("sssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $editing_id);    
                     }
 
                 

@@ -22,7 +22,7 @@
 
 <body>
 
-    <div class="preloader">
+    <div class="preloader" id="overlay">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
@@ -101,7 +101,6 @@
                                         <input type="text" class="form-control" name="twitter" id="twitter" required="required">
                                     </div>
                                 </div>
-
 
                                 <!-- Body -->
                                 <div class="col-md-12">
