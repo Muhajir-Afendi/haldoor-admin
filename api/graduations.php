@@ -240,9 +240,9 @@
                         $stmt->bind_param("ssssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $filename, $editing_id);    
                     }
                     else {
-                        $UPDATE = "UPDATE `graduations` SET `title`=?,`body`=? WHERE `id`=?";
+                        $UPDATE = "UPDATE `graduations` SET `title`=?,`body`=?, `facebook`=?, `youtube`=?, `instagram`=?, `twitter`=? WHERE `id`=?";
                         $stmt = $conn -> prepare($UPDATE);
-                        $stmt->bind_param("sssssss", $title, $body, $editing_id);    
+                        $stmt->bind_param("sssssss", $title, $body, $facebook, $youtube, $instagram, $twitter, $editing_id);    
                     }
 
                 
