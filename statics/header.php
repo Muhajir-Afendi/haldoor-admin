@@ -10,7 +10,7 @@
             <div class="navbar-brand">
 
                 <!-- Logo icon -->
-                <a href="index.html">
+                <a href="/">
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
                         <img src="/assets/img/logo.png" alt="Haldoor" class="dark-logo" style="width: 30%" />
